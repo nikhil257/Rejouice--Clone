@@ -63,33 +63,70 @@ function cursorEffect() {
 }
 cursorEffect();
 
-
 function page2Animation() {
-  gsap.from(".elem h1",{
-    y : "140px",
-    duration:5,
+  gsap.from(".elem h1", {
+    y: "140px",
+    duration: 5,
     stagger: 1,
-    scrollTrigger : {
-      trigger : "#page2",
-      scroller : "#main",
-      start : "top 40%",
-      end : "top 35%",
-      scrub : 2,
-    }
-  })
+    scrollTrigger: {
+      trigger: "#page2",
+      scroller: "#main",
+      start: "top 40%",
+      end: "top 35%",
+      scrub: 2,
+    },
+  });
 }
 page2Animation();
 
 function page3TextAnimation() {
-  gsap.from(".elem2 h1",{
-    y:"130px",
-    duration : 1,
-    stagger : 1,
-    scrollTrigger : {
-      trigger : "#page3-content",
-      scroller : "#main",
-      start : "top 60%",
-      scrub : 3,
-    }
-  })
+  gsap.from(".elem2 h1", {
+    y: "130px",
+    duration: 1,
+    stagger: 1,
+    scrollTrigger: {
+      trigger: "#page3-content",
+      scroller: "#main",
+      start: "top 60%",
+      scrub: 3,
+    },
+  });
 }
+
+function page4cursor() {
+  var page4video = document.querySelector(".page4");
+  var cursortwo = document.querySelector("#cursortwo");
+
+  page4video.addEventListener("mousemove", function (det) {
+    gsap.to(cursortwo, {
+      x: det.x,
+      y: det.y,
+    });
+    page4video.addEventListener("mouseenter", function () {
+      gsap.to(cursortwo, {
+        scale: 1,
+        duration:0.25,
+      });
+    });
+    page4video.addEventListener("mouseleave", function () {
+      gsap.to(cursortwo, {
+        scale: 0,
+        duration:0.25,
+      });
+    });
+  });
+}
+page4cursor();
+
+function swiper() {
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: true,
+    },
+  });
+}
+swiper();
