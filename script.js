@@ -105,13 +105,13 @@ function page4cursor() {
     page4video.addEventListener("mouseenter", function () {
       gsap.to(cursortwo, {
         scale: 1,
-        duration:0.25,
+        duration: 0.25,
       });
     });
     page4video.addEventListener("mouseleave", function () {
       gsap.to(cursortwo, {
         scale: 0,
-        duration:0.25,
+        duration: 0.25,
       });
     });
   });
@@ -130,3 +130,47 @@ function swiper() {
   });
 }
 swiper();
+
+function footerAnimation() {
+  gsap.to("#footer-bottom .endhead", {
+    duration: 2,
+    stagger: 1,
+    opacity : 1,
+    scrollTrigger: {
+      trigger: "#footer-bottom",
+      scroller: "#main",
+      start : "top 55%",
+      end: "top 45%",
+      scrub: 3,
+    },
+  });
+}
+footerAnimation();
+
+var tl = gsap.timeline();
+tl.from("#loader h3",{
+  x:70,
+  opacity : 0,
+  duration : 1,
+  stagger : 0.2,
+})
+tl.to("#loader h3",{
+  opacity : 0,
+  x : -5,
+  stagger : 0.1,
+})
+tl.to("#loader", {
+  y : "-100%",
+  opacity : 0,
+  duration : 0.5,
+})
+tl.from(".page1-content h1 span",{
+  y : 100,
+  opacity : 0,
+  delay : -0.5,
+  duration : 0.8,
+  stagger : 0.1,
+})
+tl.to("#loader", {
+  display : "none",
+})

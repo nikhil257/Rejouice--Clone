@@ -83,6 +83,7 @@ nav h4 {
   font-size: 27vw;
   font-weight: 100;
   color: white;
+  display: inline-block;
 }
 
 #page2 {
@@ -324,11 +325,30 @@ nav h4 {
     width: 100%;
     height: 60%;
 }
-#footer-bottom h1{
-    font-size: 27vw;
-    line-height: 27vw;
-    color: #FFFCF1;
-    font-weight: 100;
+#footer-bottom{
     font-family: pp;
     text-align: center;
+}
+#footer-bottom .endhead{
+  font-size: 27vw;
+  line-height: 27vw;
+  color: #FFFCF1;
+  font-weight: 100;
+  opacity: 0;
+}
+#loader{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+}
+#loader h3{
+  color: white;
+  font-size: 2vw;
+  font-weight: 100;
 }
